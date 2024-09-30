@@ -1,8 +1,3 @@
-Checkpoint Path for WiGNet-Ti:
-```
-checkpoints/wignet_ti_256_gelu_shift_adapt_knn/model.pth.tar
-```
-
 Conda environment dumped in:
 ```
 env_wignet.yaml
