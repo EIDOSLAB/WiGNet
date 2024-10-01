@@ -1,12 +1,15 @@
+# WiGNet: Windowed Vision Graph Neural Network
+
+
 Conda environment dumped in:
 ```
 env_wignet.yaml
 ```
 
-# ImageNet Classification
+## ImageNet Classification
 
 
-## Evaluation
+### Evaluation
 ```
 python train.py --model wignn_ti_256_gelu \
 --img-size 256 \
@@ -19,7 +22,7 @@ python train.py --model wignn_ti_256_gelu \
 --evaluate 
 ```
 
-## Training WiGNet-Ti on 8 GPUs
+### Training WiGNet-Ti on 8 GPUs
 ```
 python -m torch.distributed.launch \
 --nproc_per_node=8 train.py \
@@ -55,9 +58,9 @@ python -m torch.distributed.launch \
 
 
 
-# Complexity Evaluation
+## Complexity Evaluation
 
-## Memory & MACs
+### Memory & MACs
 - WiGNet
 ```
 python -m model.wignn
@@ -81,7 +84,7 @@ python -m model.mobilevig
 
 
 
-# Transfer Learning
+## Transfer Learning
 - WiGNet
 ```
 python train_trasnfer_learning.py 
