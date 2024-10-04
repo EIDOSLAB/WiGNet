@@ -1,15 +1,34 @@
 # WiGNet: Windowed Vision Graph Neural Network
 
+Pytorch implementation of the paper "**WiGNet: Windowed Vision Graph Neural Network**", published at WACV 2025. This repository is based on [VisionGNN](https://github.com/jichengyuan/Vision_GNN).
 
-Conda environment dumped in:
-```
-env_wignet.yaml
-```
+[ArXiv](https://arxiv.org/abs/2410.00807)
 
-## ImageNet Classification
+<div align="center">
+<img src="imgs/teaser_wignet.png" alt="teaser" width="400"/>
+</div>
+
+## Abstract
+In recent years, Graph Neural Networks (GNNs) have demonstrated strong adaptability to various real-world challenges, with architectures such as Vision GNN (ViG) achieving state-of-the-art performance in several computer vision tasks. However, their practical applicability is hindered by the computational complexity of constructing the graph, which scales quadratically with the image size. In this paper, we introduce a novel Windowed vision Graph neural Network (WiGNet) model for efficient image processing. WiGNet explores a different strategy from previous works by partitioning the image into windows and constructing a graph within each window. Therefore, our model uses graph convolutions instead of the typical 2D convolution or self-attention mechanism. WiGNet effectively manages computational and memory complexity for large image sizes. We evaluate our method in the ImageNet-1k benchmark dataset and test the adaptability of WiGNet using the CelebA-HQ dataset as a downstream task with higher-resolution images. In both of these scenarios, our method achieves competitive results compared to previous vision GNNs while keeping memory and computational complexity at bay. WiGNet offers a promising solution toward the deployment of vision GNNs in real-world applications.
 
 
-### Evaluation
+<div align="center">
+<img src="imgs/complexity.png" alt="complexity" width="1000"/>
+</div>
+
+
+## Usage
+
+Download our pretrained model from [here](https://drive.google.com/file/d/11bDJaiYxCIwG2OxapIJSkQZys38wDI4S/view?usp=sharing).
+
+### Environment
+- conda env create -f env_wignet.yml
+- conda activate wignet
+
+### ImageNet Classification
+
+
+- Evaluation
 ```
 python train.py --model wignn_ti_256_gelu \
 --img-size 256 \
@@ -22,7 +41,7 @@ python train.py --model wignn_ti_256_gelu \
 --evaluate 
 ```
 
-### Training WiGNet-Ti on 8 GPUs
+- Training WiGNet-Ti on 8 GPUs
 ```
 python -m torch.distributed.launch \
 --nproc_per_node=8 train.py \
@@ -58,9 +77,9 @@ python -m torch.distributed.launch \
 
 
 
-## Complexity Evaluation
+### Complexity Evaluation
 
-### Memory & MACs
+**Memory & MACs**
 - WiGNet
 ```
 python -m model.wignn
@@ -84,7 +103,7 @@ python -m model.mobilevig
 
 
 
-## Transfer Learning
+### Transfer Learning
 - WiGNet
 ```
 python train_trasnfer_learning.py 
@@ -107,3 +126,15 @@ python train_trasnfer_learning.py
 ```
 
 For ViG include `--num-gpu 8`
+
+## Results
+
+### ImageNet-1k
+<div>
+<img src="imgs/tab_inet.png" alt="inet" width=600"/>
+</div>
+
+### CelebaHq
+<div>
+<img src="imgs/res_celebahq.png" alt="celebahq" width="600"/>
+</div>
