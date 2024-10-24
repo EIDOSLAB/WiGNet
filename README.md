@@ -138,3 +138,16 @@ For ViG include `--num-gpu 8`
 <div>
 <img src="imgs/res_celebahq.png" alt="celebahq" width="600"/>
 </div>
+
+
+# Citation
+If you use our code, please cite
+
+```
+    @inproceedings{spadaro2024wignet,
+      title={{W}i{GN}et: {W}indowed {V}ision {G}raph {N}eural {N}etwork},
+      author={Spadaro, Gabriele and Grangetto, Marco and Fiandrotti, Attilio and Tartaglione, Enzo and Giraldo, Jhony H},
+      booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+      year={2025}
+    }
+```
