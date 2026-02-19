@@ -1,12 +1,24 @@
-# WiGNet: Windowed Vision Graph Neural Network
-
-Pytorch implementation of the paper "**WiGNet: Windowed Vision Graph Neural Network**", published at WACV 2025. This repository is based on [VisionGNN](https://github.com/jichengyuan/Vision_GNN).
-
-[ArXiv](https://arxiv.org/abs/2410.00807)
+# WiGNet: Windowed Vision Graph Neural Network (Oral Presentation at WACV 2025)
 
 <div align="center">
 <img src="imgs/teaser_wignet.png" alt="teaser" width="400"/>
 </div>
+<div align="center">
+<b>Authors:</b> Gabriele Spadaro<sup>1,2</sup>, Marco Grangetto<sup>1</sup>, Attilio Fiandrotti<sup>1,2</sup>, <br>Enzo Tartaglione<sup>2</sup> and
+Jhony H. Giraldo<sup>2</sup><br>
+<sup>1</sup>University of Turin, Italy<br>
+<sup>2</sup>LTCI, Télécom Paris, Institut Polytechnique de Paris
+</div>
+
+## 📢 Announcement 
+<div style="text-align: justify;">
+Official pytorch implementation of the paper "<strong>WiGNet: Windowed Vision Graph Neural Network</strong>", presented as an <strong>Oral Presentation at WACV 2025</strong>. 
+<br><br>
+  <a href="https://openaccess.thecvf.com/content/WACV2025/papers/Spadaro_WiGNet_Windowed_Vision_Graph_Neural_Network_WACV_2025_paper.pdf">
+    📄 Read the WACV Paper
+  </a>
+</div>
+
 
 ## Abstract
 In recent years, Graph Neural Networks (GNNs) have demonstrated strong adaptability to various real-world challenges, with architectures such as Vision GNN (ViG) achieving state-of-the-art performance in several computer vision tasks. However, their practical applicability is hindered by the computational complexity of constructing the graph, which scales quadratically with the image size. In this paper, we introduce a novel Windowed vision Graph neural Network (WiGNet) model for efficient image processing. WiGNet explores a different strategy from previous works by partitioning the image into windows and constructing a graph within each window. Therefore, our model uses graph convolutions instead of the typical 2D convolution or self-attention mechanism. WiGNet effectively manages computational and memory complexity for large image sizes. We evaluate our method in the ImageNet-1k benchmark dataset and test the adaptability of WiGNet using the CelebA-HQ dataset as a downstream task with higher-resolution images. In both of these scenarios, our method achieves competitive results compared to previous vision GNNs while keeping memory and computational complexity at bay. WiGNet offers a promising solution toward the deployment of vision GNNs in real-world applications.
@@ -139,6 +151,11 @@ For ViG include `--num-gpu 8`
 <img src="imgs/res_celebahq.png" alt="celebahq" width="600"/>
 </div>
 
+## Acknowledgments
+This research was partially funded by Hi!PARIS Center on Data Analytics and Artificial Intelligence. This project was provided with computer and storage resources by GENCI at IDRIS thanks to the grant 2024-AD011015338 on the supercomputer Jean Zay.
+
+
+This repository is based on [VisionGNN](https://github.com/jichengyuan/Vision_GNN).
 
 # Citation
 If you use our code, please cite
